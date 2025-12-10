@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Formulario con Gráfico Embebido</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <main class="container">
+    <h1>Formulario con Gráfico Embebido</h1>
+
+    <section class="panel">
+      <form id="data-form">
+        <div class="row">
+          <label for="chart-type">Tipo de gráfico</label>
+          <select id="chart-type" name="chartType">
+            <option value="bar">Barras</option>
+            <option value="line">Línea</option>
+            <option value="pie">Pastel</option>
+          </select>
+        </div>
+
+        <div class="row">
+          <label for="title">Título</label>
+          <input id="title" name="title" placeholder="Ventas por mes" />
+        </div>
+
+        <div class="row">
+          <label for="labels">Etiquetas (coma separadas)</label>
+          <input id="labels" name="labels" placeholder="Enero,Febrero,Marzo" />
+        </div>
+
+        <div class="row">
+          <label for="values">Valores (coma separados)</label>
+          <input id="values" name="values" placeholder="120,150,90" />
+        </div>
+
+        <div class="buttons">
+          <button type="submit">Generar / Actualizar gráfico</button>
+          <button type="button" id="load-sample">Cargar ejemplo (ventas)</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="chart-panel">
+      <canvas id="chartCanvas" aria-label="Gráfico embebido" role="img"></canvas>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
